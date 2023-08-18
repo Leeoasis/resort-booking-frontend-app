@@ -1,29 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import AddReservation from './routes/AddReservation';
+import DeleteReservation from './routes/DeleteReservation';
+import Details from './routes/Details';
+import Home from './routes/Home';
+import Reservations from './routes/Reservations';
+import ReserveForm from './routes/ReserveForm';
+import Navbar from './components/Navbar';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit
-          {' '}
-          <code>src/App.js</code>
-          {' '}
-          and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <Router>
+    <Navbar />
+    <Routes>
+      <Route path="/home" element={<Home />} />
+      <Route path="/add-reservation" element={<AddReservation />} />
+      <Route path="/delete-reservation" element={<DeleteReservation />} />
+      <Route path="/details" element={<Details />} />
+      <Route path="/reservations" element={<Reservations />} />
+      <Route path="/reserve-form" element={<ReserveForm />} />
+    </Routes>
+  </Router>
+);
 
 export default App;
