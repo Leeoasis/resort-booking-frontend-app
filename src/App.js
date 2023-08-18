@@ -5,8 +5,8 @@ import DeleteReservation from './routes/DeleteReservation';
 import Details from './routes/Details';
 import Home from './routes/Home';
 import Reservations from './routes/Reservations';
-import ReserveForm from './routes/ReserveForm';
 import Navbar from './components/Navbar';
+import './styles/App.css';
 
 const App = () => (
   <Router>
@@ -17,7 +17,6 @@ const App = () => (
       <Route path="/delete-reservation" element={<DeleteReservation />} />
       <Route path="/details" element={<Details />} />
       <Route path="/reservations" element={<Reservations />} />
-      <Route path="/reserve-form" element={<ReserveForm />} />
     </Routes>
   </Router>
 );
