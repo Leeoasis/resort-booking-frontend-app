@@ -3,13 +3,9 @@ import styles from '../../inline.module.css';
 
 const HomeLogin = () =>{
     return(
-        <div className="container">
-            <div className="row">
-                <div className="col-12 col-md-6 offset-md-3 p-3 gap-3 card">
-                    <Link className={styles.text} to='/login'>Login</Link>
-                    <Link className={styles.text} to='/signup'>Sign Up</Link>
-                </div>
-            </div>
+        <div className="d-flex flex-column col-md-6 col-12 p-5 gap-2 card">
+        <Link className={styles.text} to='/login'>Login</Link>
+        <Link className={styles.text} to='/signup'>Sign Up</Link>
         </div>
     )
 }
