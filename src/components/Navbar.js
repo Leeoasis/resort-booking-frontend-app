@@ -1,16 +1,22 @@
 import { Link } from "react-router-dom";
 import styles from '../inline.module.css'
-const Navbar = ()=> {
+import { useState } from "react";
+const Navbar = ({ isOpen })=> {
+    const [sidebar, SetsideBar] = useState(false)
+    const openMenu = ()=> SetsideBar(!sidebar);
     return (
-        <nav className="col-12 col-md-2 border flex-column">
+        <>
+        <header className="bg-dark text-light"><i class="fa-solid fa-bars" onClick={openMenu} /></header>
+        <nav className={`col-4 col-md-2 flex-column ${sidebar ? "open" : ""}`}>
+            <p><i class="fa-solid fa-x text-light" onClick={openMenu}/></p>
             <h1 className="fs-2 py-2 text-center d-md-block d-none">LOGO</h1>
-            <ul className="menu d-flex flex-column fs-6 pt-4">
+            <ul className=" d-flex flex-column fs-6 pt-4" onClick={openMenu}>
                 <li><a href=".">Item 1</a></li>
                 <li><a href=".">Item 2</a></li>
                 <li><a href=".">Item 3</a></li>
                 <li><a href=".">Item 4</a></li>
             </ul>
-            <footer className="d-flex flex-column">
+            <footer className="d-flex flex-column" onClick={openMenu}>
                 <div className="d-flex col-12">
                     <Link className={styles.join} to='/join'>Want to join?</Link>
                 </div>
@@ -25,6 +31,7 @@ const Navbar = ()=> {
                 </div>
             </footer>
         </nav>
+        </>
     )
 }
 
