@@ -60,7 +60,7 @@ nav ul a:hover {
   header {
     display: flex;
     height: 40px;
-    padding: 0 5px;
+    padding: 10px 5px;
     font-size: 19px;
     align-items: center;
   }
