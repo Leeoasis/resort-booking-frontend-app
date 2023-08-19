@@ -55,7 +55,6 @@ nav ul a:hover {
 }
 
 
-
 @media only screen and (max-width: 767px) {
   header {
     display: flex;
@@ -97,6 +96,15 @@ nav ul a:hover {
     position: fixed;
     left: 0;
     transition: 350ms;
+  }
+
+  .sessions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .login {
+    padding: 50px 0;
   }
 
 }

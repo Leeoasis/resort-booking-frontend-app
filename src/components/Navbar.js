@@ -6,9 +6,9 @@ const Navbar = ({ isOpen })=> {
     const openMenu = ()=> SetsideBar(!sidebar);
     return (
         <>
-        <header className="bg-dark text-light"><i class="fa-solid fa-bars" onClick={openMenu} /></header>
+        <header className="bg-dark text-light"><i className="fa-solid fa-bars" onClick={openMenu} /></header>
         <nav className={`col-4 col-md-2 flex-column ${sidebar ? "open" : ""}`}>
-            <p><i class="fa-solid fa-x text-light" onClick={openMenu}/></p>
+            <p><i className="fa-solid fa-x text-light" onClick={openMenu}/></p>
             <h1 className="fs-2 py-2 text-center d-md-block d-none">LOGO</h1>
             <ul className=" d-flex flex-column fs-6 pt-4" onClick={openMenu}>
                 <li><a href=".">Item 1</a></li>

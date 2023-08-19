@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 const SignUp = () => {
     return(
-        <div className="d-flex justify-content-center align-items-center h-100">
+        <div className="d-flex justify-content-center align-items-center h-100 login">
             <form className="gap-3 d-flex flex-column form-container card p-5">
                 <div className="mb-3 d-flex justify-content-center">
                     <h3>Sign Up</h3>
