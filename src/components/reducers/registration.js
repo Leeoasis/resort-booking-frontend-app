@@ -1,13 +1,27 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
+
+const urlSignUp = 'http://127.0.0.1:3000/users';
 
 export const fetchreg = createAsyncThunk(
     "sign_in/fetchregistration",
-    async () => {
-        const response = await axios.post('http://127.0.0.1:3000/users/');
-        return await response.data;
-    }
-);
+    async (users) => {
+        const response = await fetch(urlSignUp, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              user: {
+                name: users.name,
+                email: users.email,
+                password: users.password,
+              },
+            }),
+          });
+          const data = await response.json();
+          return data;
+        });
+
 const initialState = {
     sign_up: {},
     error: undefined,
@@ -30,6 +44,6 @@ const registration_slice = createSlice({
             state.error = action.error.message
         });
     }
-})
+});
 
 export default registration_slice.reducer;
