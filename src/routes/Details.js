@@ -1,9 +1,9 @@
 import React from 'react';
-import MyDetails from '../components/details';
+import ResortDetails from '../components/resortDetails';
 
 const Details = () => (
   <div>
-    <MyDetails />
+    <ResortDetails />
   </div>
 );
 
