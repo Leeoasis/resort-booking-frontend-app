@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import fetchreg from '../reducers/registration'
+
 const SignUp = () => {
     const dispatch = useDispatch();
     const sessionState = useSelector(state => state.sign_up);
@@ -18,7 +21,7 @@ const SignUp = () => {
     const handleSubmit = (e) => {
         e.preventDefault(); 
         
-        dispatch(fetchsession(user.name ,user.email, user.password));
+        dispatch(fetchreg(user.name ,user.email, user.password));
     };
     return(
         <div className="d-flex justify-content-center align-items-center h-100 login">
