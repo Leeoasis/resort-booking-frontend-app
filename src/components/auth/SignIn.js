@@ -44,9 +44,8 @@ const Sign_in = () => {
             <div className="mb-3 d-flex justify-content-center">
             <Link to='/signup'>Want to sign up?</Link>
             </div>
-            {sessionState.isLoading && <p>Loading...</p>}
+                {sessionState.isLoading && <p>Loading...</p>}
                 {sessionState.error && <p>Error: {sessionState.error}</p>}
-                {sessionState.sign_in && <p>Login successful!</p>}
             </form>
         </div>
     )
