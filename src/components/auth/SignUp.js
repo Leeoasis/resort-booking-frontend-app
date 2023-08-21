@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import fetchreg from '../reducers/registration'
+import { fetchreg } from '../reducers/registration'
 
 const SignUp = () => {
     const dispatch = useDispatch();
@@ -21,7 +21,7 @@ const SignUp = () => {
     const handleSubmit = (e) => {
         e.preventDefault(); 
         
-        dispatch(fetchreg(user.name ,user.email, user.password));
+        dispatch(fetchreg({ email: user.email, password: user.password, password_confirmation: user.password_confirmation }))
     };
     return(
         <div className="d-flex justify-content-center align-items-center h-100 login">
@@ -30,16 +30,16 @@ const SignUp = () => {
                     <h3>Sign Up</h3>
                 </div>
             <div className=" mb-3">
-                <label htmlFor="name">Name:</label>
-                <input id="name" type="text" className="form-control" name="name" onChange={controlReg} />
-            </div>
-            <div className=" mb-3">
                 <label htmlFor="email">Email:</label>
                 <input id="email" type="email" className="form-control" name="email" onChange={controlReg}/>
             </div>
             <div className="mb-3">
                 <label htmlFor="password">Password:</label>
                 <input id="password" type="password" className="form-control" name="password" onChange={controlReg} />
+            </div>
+            <div className="mb-3">
+                <label htmlFor="password_confirmation">Password Confirmation:</label>
+                <input id="password_confirmation" type="password" className="form-control" name="password_confirmation" onChange={controlReg} />
             </div>
             <div className="d-flex justify-content-center">
                 <input type="submit" className="mb-2 btn btn-primary" value="Submit" />

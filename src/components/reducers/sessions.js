@@ -4,7 +4,7 @@ import axios from "axios";
 export const fetchsession = createAsyncThunk(
     "sign_in/fetchsession",
     async () => {
-        const response = await axios.post('http://127.0.0.1:3000/users/sign_in');
+        const response = await axios.get('http://127.0.0.1:3000/users/sign_in');
         return await response.data;
     }
 );
