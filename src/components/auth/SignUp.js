@@ -7,9 +7,9 @@ const SignUp = () => {
     const dispatch = useDispatch();
     const sessionState = useSelector(state => state.sign_up);
     const [user, setUser] = useState({
-        name: '',
         email: '',
-        password: ''
+        password: '',
+        password_confirmation: '',
     })
     const controlReg = (e) =>{
         const { name, value } = e.target;
