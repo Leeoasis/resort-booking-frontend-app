@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import styles from '../inline.module.css'
+import styles from '../inline.module.css';
+import { NavLink } from 'react-router-dom';
 import { useState } from "react";
 const Navbar = ({ isOpen })=> {
     const [sidebar, SetsideBar] = useState(false)
@@ -11,10 +12,11 @@ const Navbar = ({ isOpen })=> {
             <p><i className="fa-solid fa-x text-light" onClick={openMenu}/></p>
             <h1 className="fs-2 py-2 text-center d-md-block d-none">LOGO</h1>
             <ul className=" d-flex flex-column fs-6 pt-4" onClick={openMenu}>
-                <li><a href=".">Item 1</a></li>
-                <li><a href=".">Item 2</a></li>
-                <li><a href=".">Item 3</a></li>
-                <li><a href=".">Item 4</a></li>
+            <li className="nav-item-list"><NavLink to="/home" activeClassName="active"><p className="tab">Home</p></NavLink></li>
+            <li className="nav-item-list"><NavLink to="/add-reservation" activeClassName="active"><p className="tab">Add</p></NavLink></li>
+            <li className="nav-item-list"><NavLink to="/delete-reservation" activeClassName="active"><p className="tab">Delete</p></NavLink></li>
+            <li className="nav-item-list"><NavLink to="/details" activeClassName="active"><p className="tab">Details</p></NavLink></li>
+            <li className="nav-item-list"><NavLink to="/reservations" activeClassName="active"><p className="tab">Reservations</p></NavLink></li>
             </ul>
             <footer className="d-flex flex-column" onClick={openMenu}>
                 <div className="d-flex col-12">
