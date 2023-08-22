@@ -34,15 +34,16 @@ nav h1 {
   margin-right: auto;
 }
 
-nav ul , a {
+nav ul,
+a {
   list-style: none;
   text-decoration: none;
   width: 100%;
   text-align: center;
   height: 100%;
   line-height: 35px;
-  transition: .5s;
-  color: #000000;
+  transition: 0.5s;
+  color: #000;
   font-weight: 500;
   border-radius: 2px;
   padding: 0;
@@ -59,13 +60,13 @@ nav ul a:hover {
   color: #fff;
 }
 
+p {
+  margin-bottom: 0;
+}
+
 .active > p {
   background-color: rgba(92, 211, 195, 0.642);
   color: #fff;
-}
-
-p {
-  margin-bottom: 0px;
 }
 
 @media only screen and (max-width: 767px) {
@@ -76,6 +77,7 @@ p {
     font-size: 19px;
     align-items: center;
   }
+
   nav {
     display: flex;
     height: 100vh;
@@ -92,7 +94,7 @@ p {
     padding: 0;
   }
 
-  nav ul li a{
+  nav ul li a {
     color: #fff;
     width: 100%;
   }
@@ -116,8 +118,8 @@ p {
     justify-content: center;
     align-items: center;
   }
+
   .login {
     padding: 50px 0;
   }
-
 }
