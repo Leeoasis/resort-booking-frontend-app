@@ -29,6 +29,11 @@ nav h1 {
   font-family: sans-serif;
 }
 
+.nav-logo {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 nav ul , a {
   list-style: none;
   text-decoration: none;
@@ -50,12 +55,12 @@ nav ul li {
 }
 
 nav ul a:hover {
-  background-color: rgb(130, 165, 48);
+  background-color: rgba(92, 211, 195, 0.952);
   color: #fff;
 }
 
 .active > p {
-  background-color: rgb(130, 165, 48);
+  background-color: rgba(92, 211, 195, 0.642);
   color: #fff;
 }
 

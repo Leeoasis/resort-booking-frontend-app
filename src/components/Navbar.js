@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from '../inline.module.css';
+import logo from './images/logo.png';
 import { NavLink } from 'react-router-dom';
 import { useState } from "react";
 const Navbar = ({ isOpen })=> {
@@ -10,7 +11,7 @@ const Navbar = ({ isOpen })=> {
         <header className="bg-dark text-light"><i className="fa-solid fa-bars" onClick={openMenu} /></header>
         <nav className={`col-4 col-md-2 flex-column ${sidebar ? "open" : ""}`}>
             <p><i className="fa-solid fa-x text-light" onClick={openMenu}/></p>
-            <h1 className="fs-2 py-2 text-center d-md-block d-none">LOGO</h1>
+            <img className="nav-logo" src={logo} width={140} height={40} alt="Navbar logo" />
             <ul className=" d-flex flex-column fs-6 pt-4" onClick={openMenu}>
             <li className="nav-item-list"><NavLink to="/home" activeClassName="active"><p className="tab">Home</p></NavLink></li>
             <li className="nav-item-list"><NavLink to="/add-reservation" activeClassName="active"><p className="tab">Add</p></NavLink></li>
