@@ -3,7 +3,7 @@ import Authentication from "./components/Authentication"
 import SignIn from "./components/auth/SignIn";
 import SignUp from "./components/auth/SignUp";
 import { Routes,Route } from "react-router-dom";
-import Home from "./components/Home";
+import Home from "./components/home/Home";
 function App() {
   return (
     <>
