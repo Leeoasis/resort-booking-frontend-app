@@ -1,6 +1,7 @@
 import React from 'react'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import Card from './Card';
 
 function Home() {
 
@@ -46,13 +47,13 @@ function Home() {
             dotListClass="custom-dot-list-style"
             itemClass="carousel-item-padding-40-px"
             >
-            <div>Item 1</div>
-            <div>Item 2</div>
-            <div>Item 3</div>
-            <div>Item 4</div>
-            <div>Item 5</div>
-            <div>Item 6</div>
-            <div>Item 7</div>
+            <div><Card /></div>
+            <div><Card /></div>
+            <div><Card /></div>
+            <div><Card /></div>
+            <div><Card /></div>
+            <div><Card /></div>
+            <div><Card /></div>
         </Carousel>
     </>
   )
