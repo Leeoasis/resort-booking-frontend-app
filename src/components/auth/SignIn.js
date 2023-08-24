@@ -7,22 +7,27 @@ const SignIn = () => {
   const dispatch = useDispatch();
   const sessionState = useSelector((state) => state.sign_in);
   const [login, setLogin] = useState({
-    email: '',
-    password: '',
+    user: {
+      email: '',
+      password: '',
+    },
   });
 
   const controlSession = (e) => {
     const { name, value } = e.target;
     setLogin((prevState) => ({
-      ...prevState,
-      [name]: value,
+      ...prevState.user,
+      user: {
+        ...prevState.user,
+        [name]: value,
+      },
     }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    dispatch(fetchsession(login.email, login.password));
+    dispatch(fetchsession(login));
   };
 
   return (
@@ -39,7 +44,7 @@ const SignIn = () => {
             type="email"
             className="form-control"
             name="email"
-            value={login.email}
+            value={login.user.email}
             onChange={controlSession}
           />
         </div>
@@ -50,7 +55,7 @@ const SignIn = () => {
             id="password"
             type="password"
             name="password"
-            value={login.password}
+            value={login.user.password}
             onChange={controlSession}
             className="form-control"
           />

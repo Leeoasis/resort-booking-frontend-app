@@ -1,25 +1,13 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-
-const urlSignUp = 'http://127.0.0.1:3000/users';
+import axios from 'axios';
 
 export const fetchreg = createAsyncThunk(
   'sign_in/fetchregistration',
-  async (users) => {
-    const response = await fetch(urlSignUp, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        user: {
-          name: users.name,
-          email: users.email,
-          password: users.password,
-        },
-      }),
-    });
-    const data = await response.json();
-    return data;
+  async (user) => {
+    const url = 'http://127.0.0.1:3000/signup';
+    const response = await axios.post(url, user);
+    localStorage.setItem('token', response.headers.get('Authorization'));
+    return response.data;
   },
 );
 

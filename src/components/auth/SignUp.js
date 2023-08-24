@@ -7,26 +7,27 @@ const SignUp = () => {
   const dispatch = useDispatch();
   const sessionState = useSelector((state) => state.sign_up);
   const [user, setUser] = useState({
-    email: '',
-    password: '',
-    password_confirmation: '',
+    user: {
+      email: '',
+      password: '',
+      password_confirmation: '',
+    },
   });
 
   const controlReg = (e) => {
     const { name, value } = e.target;
     setUser((prevState) => ({
-      ...prevState,
-      [name]: value,
+      ...prevState.user,
+      user: {
+        ...prevState.user,
+        [name]: value,
+      },
     }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(fetchreg({
-      email: user.email,
-      password: user.password,
-      password_confirmation: user.password_confirmation,
-    }));
+    dispatch(fetchreg(user));
   };
 
   return (
@@ -42,6 +43,7 @@ const SignUp = () => {
             id="email"
             type="email"
             className="form-control"
+            value={user.user.email}
             name="email"
             onChange={controlReg}
           />
@@ -53,6 +55,7 @@ const SignUp = () => {
             type="password"
             className="form-control"
             name="password"
+            value={user.user.password}
             onChange={controlReg}
           />
         </div>
@@ -63,6 +66,7 @@ const SignUp = () => {
             type="password"
             className="form-control"
             name="password_confirmation"
+            value={user.user.password_confirmation}
             onChange={controlReg}
           />
         </div>
