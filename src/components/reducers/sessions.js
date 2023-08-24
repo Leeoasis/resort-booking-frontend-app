@@ -5,7 +5,7 @@ export const fetchsession = createAsyncThunk(
   'sign_in/fetchsession',
   async () => {
     const response = await axios.get('http://127.0.0.1:3000/users/sign_in');
-    return await response.data;
+    return response.data;
   },
 );
 const initialState = {
@@ -14,7 +14,7 @@ const initialState = {
   isLoading: false,
 };
 
-const session_slice = createSlice({
+const sessionSlice = createSlice({
   name: 'sign_in',
   initialState,
   extraReducers: (builder) => {
@@ -32,4 +32,4 @@ const session_slice = createSlice({
   },
 });
 
-export default session_slice.reducer;
+export default sessionSlice.reducer;

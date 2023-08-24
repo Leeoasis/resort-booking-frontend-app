@@ -29,7 +29,7 @@ const initialState = {
   isLoading: false,
 };
 
-const registration_slice = createSlice({
+const registrationSlice = createSlice({
   name: 'sign_up',
   initialState,
   extraReducers: (builder) => {
@@ -47,4 +47,4 @@ const registration_slice = createSlice({
   },
 });
 
-export default registration_slice.reducer;
+export default registrationSlice.reducer;
