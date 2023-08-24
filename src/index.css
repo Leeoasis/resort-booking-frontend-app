@@ -183,4 +183,8 @@ p {
   .react-multi-carousel-list {
     width: 100%;
   }
+
+  .main {
+    width: 100%;
+  }
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Card from './Card';
+import Card1 from './Card1';
 
 function Home() {
 
@@ -30,7 +31,7 @@ function Home() {
             <p className="title-info">Please choose your fav Resort</p>
         </div><br/><br/>
         <Carousel
-            swipeable={false}
+            swipeable={true}
             draggable={false}
             showDots={false}
             responsive={responsive}
@@ -42,13 +43,13 @@ function Home() {
             customTransition="all .5"
             transitionDuration={500}
             containerClass="carousel-container"
-            removeArrowOnDeviceType={["tablet", "mobile"]}
+            removeArrowOnDeviceType={[]}
             // deviceType={this.props.deviceType}
             dotListClass="custom-dot-list-style"
             itemClass="carousel-item-padding-40-px"
             >
             <div><Card /></div>
-            <div><Card /></div>
+            <div><Card1 /></div>
             <div><Card /></div>
             <div><Card /></div>
             <div><Card /></div>
