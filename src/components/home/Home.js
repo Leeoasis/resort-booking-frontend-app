@@ -25,10 +25,10 @@ function Home() {
 
   return (
     <>
-        <div className="header">
+        <div className="header"><br/><br/><br/><br/>
             <h1 className="title">LATEST RESORTS</h1>
             <p className="title-info">Please choose your fav Resort</p>
-        </div>
+        </div><br/><br/>
         <Carousel
             swipeable={false}
             draggable={false}
