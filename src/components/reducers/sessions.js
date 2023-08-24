@@ -6,7 +6,10 @@ export const fetchsession = createAsyncThunk(
   async (login) => {
     const url = 'http://127.0.0.1:3000/login';
     const response = await axios.post(url, login);
-    localStorage.setItem('token', response.headers.get('Authorization'));
+    if (response.status === 200) {
+      localStorage.setItem('token', response.headers.get('Authorization'));
+      localStorage.setItem('data', JSON.stringify(response.data));
+    }
     return response.data;
   },
 );
