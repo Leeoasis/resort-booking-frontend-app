@@ -5,6 +5,7 @@ import SignIn from './components/auth/SignIn';
 import SignUp from './components/auth/SignUp';
 import Home from './components/home/Home';
 import MyReservations from './components/reservations/reservations';
+import ReservationForm from './components/forms/ReservationForm';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/home" element={<Home />} />
           <Route path="/reservations" element={<MyReservations />} />
+          <Route path="/reservations/new" element={<ReservationForm />} />
         </Routes>
       </section>
     </>
