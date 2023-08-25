@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import resortsReducer from './resortsSlice';
 import registrationSlice from './sessions/registration';
+import reservationReducer from './features/resortReserveSlice'
 import sessionSlice from './sessions/sessions';
 
 const store = configureStore({
@@ -8,6 +9,7 @@ const store = configureStore({
     sign_in: sessionSlice,
     sign_up: registrationSlice,
     resorts: resortsReducer,
+    reserve: reservationReducer,
   },
 });
 
