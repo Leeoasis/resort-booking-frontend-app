@@ -6,6 +6,7 @@ import SignUp from './components/auth/SignUp';
 import Home from './components/home/Home';
 import MyReservations from './components/reservations/reservations';
 import ReservationForm from './components/forms/ReservationForm';
+import ResortForm from './components/forms/resortForm';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/reservations" element={<MyReservations />} />
           <Route path="/reservations/new" element={<ReservationForm />} />
+          <Route path="/resorts/new" element={<ResortForm />} />
         </Routes>
       </section>
     </>
