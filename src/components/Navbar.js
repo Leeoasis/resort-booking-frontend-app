@@ -14,7 +14,7 @@ const Navbar = () => {
         <img className="nav-logo" src={logo} width={140} height={40} alt="Navbar logo" />
         <ul className=" d-flex flex-column fs-6 pt-4">
           <li className="nav-item-list"><NavLink to="/home" activeClassName="active" role="button" tabIndex={0} onClick={openMenu} onKeyDown={openMenu} aria-label="toggle nav"><p className="tab">Home</p></NavLink></li>
-          <li className="nav-item-list"><NavLink to="/add-reservation" activeClassName="active" role="button" tabIndex={0} onClick={openMenu} onKeyDown={openMenu} aria-label="toggle nav"><p className="tab">Add</p></NavLink></li>
+          <li className="nav-item-list"><NavLink to="/resorts/new" activeClassName="active" role="button" tabIndex={0} onClick={openMenu} onKeyDown={openMenu} aria-label="toggle nav"><p className="tab">Add</p></NavLink></li>
           <li className="nav-item-list"><NavLink to="/delete-reservation" activeClassName="active" role="button" tabIndex={0} onClick={openMenu} onKeyDown={openMenu} aria-label="toggle nav"><p className="tab">Delete</p></NavLink></li>
           <li className="nav-item-list"><NavLink to="/details" activeClassName="active" role="button" tabIndex={0} onClick={openMenu} onKeyDown={openMenu} aria-label="toggle nav"><p className="tab">Details</p></NavLink></li>
           <li className="nav-item-list"><NavLink to="/reservations" activeClassName="active" role="button" tabIndex={0} onClick={openMenu} onKeyDown={openMenu} aria-label="toggle nav"><p className="tab">Reservations</p></NavLink></li>
