@@ -3,6 +3,7 @@ import resortsReducer from './resortsSlice';
 import registrationSlice from './sessions/registration';
 import reservationReducer from './features/resortReserveSlice';
 import sessionSlice from './sessions/sessions';
+import resortReducer from './forms/resortFormSlice';
 
 const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ const store = configureStore({
     sign_up: registrationSlice,
     resorts: resortsReducer,
     reservation: reservationReducer,
+    resortForm: resortReducer,
   },
 });
 
