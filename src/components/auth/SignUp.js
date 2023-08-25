@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchreg } from '../reducers/registration';
+import { fetchreg } from '../../redux/sessions/registration';
 
 const SignUp = () => {
   const dispatch = useDispatch();

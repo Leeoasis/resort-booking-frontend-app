@@ -1,9 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
-import resortReducers from './features/resortSlice';
+import resortsReducer from './features/resortSlice';
+import registrationSlice from './sessions/registration';
+import sessionSlice from './sessions/sessions';
 
 const store = configureStore({
   reducer: {
-    resort: resortReducers,
+    sign_in: sessionSlice,
+    sign_up: registrationSlice,
+    resorts: resortsReducer,
   },
 });
 

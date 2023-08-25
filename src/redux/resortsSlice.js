@@ -26,7 +26,7 @@ const resortsSlice = createSlice({
   reducers: {
     reserveresort(state, action) {
       const ResortId = action.payload;
-      const resort = state.resorts.find((resort) => resort.id === resortId);
+      const resort = state.resorts.find((resort) => resort.id === ResortId);
       if (resort) {
         resort.reserved = !resort.reserved;
       }
