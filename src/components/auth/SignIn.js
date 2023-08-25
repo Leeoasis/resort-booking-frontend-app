@@ -1,11 +1,13 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import { fetchsession } from '../reducers/sessions';
+import { update } from './auth';
 
 const SignIn = () => {
   const dispatch = useDispatch();
   const sessionState = useSelector((state) => state.sign_in);
+  const nav = useNavigate();
   const [login, setLogin] = useState({
     user: {
       email: '',
@@ -26,10 +28,10 @@ const SignIn = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     dispatch(fetchsession(login));
+    dispatch(update());
+    nav('/home');
   };
-  console.log('here', login);
   return (
     <div className="d-flex justify-content-center align-items-center h-100 login">
       <form className="gap-3 d-flex flex-column form-container card p-5" onSubmit={handleSubmit}>

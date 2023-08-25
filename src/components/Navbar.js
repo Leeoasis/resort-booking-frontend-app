@@ -1,11 +1,15 @@
 import { Link, NavLink } from 'react-router-dom';
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import styles from '../inline.module.css';
 import logo from './images/logo.png';
 
 const Navbar = () => {
+  const { data } = useSelector((state) => state.data);
+  console.log(data);
   const [sidebar, SetsideBar] = useState(false);
   const openMenu = () => SetsideBar(!sidebar);
+
   return (
     <>
       <header className="bg-dark text-light"><i className="fa-solid fa-bars" role="button" tabIndex={0} onClick={openMenu} onKeyDown={openMenu} aria-label="toggle nav" /></header>
@@ -21,7 +25,11 @@ const Navbar = () => {
         </ul>
         <footer className="d-flex flex-column">
           <div className="d-flex col-12">
-            <Link className={styles.join} to="/join">Want to join?</Link>
+            {(!data || data.length === 0) && (
+              <Link className={styles.join} to="/join">
+                Want to join?
+              </Link>
+            )}
           </div>
           <div className="socials d-flex flex-row" role="button" tabIndex={0} onClick={openMenu} onKeyDown={openMenu} aria-label="toggle nav">
             <a href="."><i className="fa-brands fa-x-twitter" aria-label="toggle nav" /></a>
