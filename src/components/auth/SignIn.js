@@ -1,28 +1,36 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import { fetchsession } from '../../redux/sessions/sessions';
+import { update } from '../../redux/sessions/auth';
 
 const SignIn = () => {
   const dispatch = useDispatch();
   const sessionState = useSelector((state) => state.sign_in);
+  const nav = useNavigate();
   const [login, setLogin] = useState({
-    email: '',
-    password: '',
+    user: {
+      email: '',
+      password: '',
+    },
   });
 
   const controlSession = (e) => {
     const { name, value } = e.target;
     setLogin((prevState) => ({
-      ...prevState,
-      [name]: value,
+      ...prevState.user,
+      user: {
+        ...prevState.user,
+        [name]: value,
+      },
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    dispatch(fetchsession(login.email, login.password));
+    await dispatch(fetchsession(login));
+    dispatch(update());
+    nav('/');
   };
 
   return (
@@ -39,7 +47,7 @@ const SignIn = () => {
             type="email"
             className="form-control"
             name="email"
-            value={login.email}
+            value={login.user.email}
             onChange={controlSession}
           />
         </div>
@@ -50,7 +58,7 @@ const SignIn = () => {
             id="password"
             type="password"
             name="password"
-            value={login.password}
+            value={login.user.password}
             onChange={controlSession}
             className="form-control"
           />

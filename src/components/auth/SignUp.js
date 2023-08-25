@@ -1,32 +1,38 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchreg } from '../../redux/sessions/registration';
+import { update } from '../../redux/sessions/auth';
 
 const SignUp = () => {
   const dispatch = useDispatch();
+  const nav = useNavigate();
   const sessionState = useSelector((state) => state.sign_up);
   const [user, setUser] = useState({
-    email: '',
-    password: '',
-    password_confirmation: '',
+    user: {
+      name: '',
+      email: '',
+      password: '',
+      password_confirmation: '',
+    },
   });
 
   const controlReg = (e) => {
     const { name, value } = e.target;
     setUser((prevState) => ({
-      ...prevState,
-      [name]: value,
+      ...prevState.user,
+      user: {
+        ...prevState.user,
+        [name]: value,
+      },
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    dispatch(fetchreg({
-      email: user.email,
-      password: user.password,
-      password_confirmation: user.password_confirmation,
-    }));
+    await dispatch(fetchreg(user));
+    dispatch(update());
+    nav('/');
   };
 
   return (
@@ -35,6 +41,18 @@ const SignUp = () => {
         <div className="mb-3 d-flex justify-content-center">
           <h3>Sign Up</h3>
         </div>
+        <div className="mb-3" role="group" aria-labelledby="name-label">
+          {/* eslint-disable jsx-a11y/label-has-associated-control */}
+          <label id="name-label" htmlFor="name">Name:</label>
+          <input
+            id="name"
+            type="text"
+            className="form-control"
+            value={user.user.name}
+            name="name"
+            onChange={controlReg}
+          />
+        </div>
         <div className="mb-3" role="group" aria-labelledby="email-label">
           {/* eslint-disable jsx-a11y/label-has-associated-control */}
           <label id="email-label" htmlFor="email">Email:</label>
@@ -42,6 +60,7 @@ const SignUp = () => {
             id="email"
             type="email"
             className="form-control"
+            value={user.user.email}
             name="email"
             onChange={controlReg}
           />
@@ -53,6 +72,7 @@ const SignUp = () => {
             type="password"
             className="form-control"
             name="password"
+            value={user.user.password}
             onChange={controlReg}
           />
         </div>
@@ -63,6 +83,7 @@ const SignUp = () => {
             type="password"
             className="form-control"
             name="password_confirmation"
+            value={user.user.password_confirmation}
             onChange={controlReg}
           />
         </div>
