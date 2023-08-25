@@ -1,13 +1,13 @@
 import React from 'react'
 import resort from '../images/resorts/resort1.jpg';
 
-function Card() {
+function Card({id, name, description, flickrImages}) {
   return (
-    <div className='card-container'>
-        <img className="card-img" src={resort} width={500} alt="Resort one" />
-        <h4 className='card-title'>Lux Hotel</h4>
+    <div className='card-container' id={id}>
+        <img className="card-img" src={flickrImages} width={500} alt="Resort one" />
+        <h4 className='card-title'>{name}</h4>
         <hr/>
-        <p className='card-description'>This resort is for you if you need a quite place to relax </p>
+        <p className='card-description'>{description}</p>
         <br />
         <div className='social-group'>
           <span className='social-icon'><i className="fa-brands fa-x-twitter" /></span>

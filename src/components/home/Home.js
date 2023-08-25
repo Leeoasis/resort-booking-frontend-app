@@ -1,10 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Card from './Card';
 import Card1 from './Card1';
+import { fetchresorts } from '../reducers/resortsSlice';
 
 function Home() {
+  const dispatch = useDispatch();
+  const { resorts, loading } = useSelector((store) => store.resorts);
+  console.log(resorts)
+
+  useEffect(() => {
+    if (resorts.length === 0) {
+      dispatch(fetchresorts());
+    }
+  }, [dispatch, resorts]);
 
     const responsive = {
         desktop: {
@@ -23,6 +34,12 @@ function Home() {
           slidesToSlide: 1 // optional, default to 1.
         }
       };
+
+      if (loading === 'loading') {
+        return (
+          <h1 style={{ marginLeft: '40px' }}>Loading...</h1>
+        );
+      }
 
   return (
     <>
@@ -48,13 +65,17 @@ function Home() {
             dotListClass="custom-dot-list-style"
             itemClass="carousel-item-padding-40-px"
             >
-            <div><Card /></div>
-            <div><Card1 /></div>
-            <div><Card /></div>
-            <div><Card /></div>
-            <div><Card /></div>
-            <div><Card /></div>
-            <div><Card /></div>
+            {resorts.map((item) => (
+              <div>
+                <Card
+                  key={item.id}
+                  id={item.id}
+                  name={item.name}
+                  description={item.description}
+                  flickrImages={item.image}
+                />
+              </div>
+            ))}
         </Carousel>
     </>
   )
