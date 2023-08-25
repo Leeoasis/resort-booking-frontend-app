@@ -25,7 +25,6 @@ export const postReservation = createAsyncThunk(
 export const getReservations = createAsyncThunk(
   'reservation/getReservations', // Unique action type
   async () => {
-    const user = JSON.parse(localStorage.getItem('user'));
     const requestOptions = {
       method: 'GET',
       headers: {
@@ -35,7 +34,6 @@ export const getReservations = createAsyncThunk(
 
     const resp = await fetch(baseUrl, requestOptions);
     const data = await resp.json();
-    console.log(data);
     return data;
   },
 );
@@ -64,14 +62,12 @@ const reservationSlice = createSlice({
       .addCase(postReservation.rejected, (state) => ({
         ...state,
         isLoading: false,
+      }
+      ))
+      .addCase(getReservations.pending, (state) => ({
+        ...state,
+        isLoading: true,
       }))
-      .addCase(getReservations.pending, (state) => {
-        console.log('Fetching reservations...');
-        return {
-          ...state,
-          isLoading: true,
-        };
-      })
       .addCase(getReservations.fulfilled, (state, { payload }) => ({
         ...state,
         isLoading: false,

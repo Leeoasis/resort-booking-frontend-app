@@ -4,7 +4,7 @@ import Authentication from './components/Authentication';
 import SignIn from './components/auth/SignIn';
 import SignUp from './components/auth/SignUp';
 import Home from './components/home/Home';
-import MyReservations from './components/reservations';
+import MyReservations from './components/reservations/reservations';
 
 function App() {
   return (

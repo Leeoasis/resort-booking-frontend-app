@@ -8,7 +8,6 @@ import { fetchresorts } from '../../redux/resortsSlice';
 function Home() {
   const dispatch = useDispatch();
   const { resorts, loading } = useSelector((store) => store.resorts);
-  console.log(resorts);
 
   useEffect(() => {
     if (resorts.length === 0) {
