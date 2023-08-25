@@ -1,8 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
-import { fetchsession } from '../reducers/sessions';
-import { update } from './auth';
+import { fetchsession } from '../../redux/sessions/sessions';
 
 const SignIn = () => {
   const dispatch = useDispatch();
