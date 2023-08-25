@@ -1,6 +1,6 @@
 import { Link, NavLink } from 'react-router-dom';
 import { useState } from 'react';
-import styles from '../inline.module.css';
+import styles from '../styles/inline.module.css';
 import logo from './images/logo.png';
 
 const Navbar = () => {

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import styles from '../../inline.module.css';
+import styles from '../../styles/inline.module.css';
 
 const HomeLogin = () => (
   <div className="d-flex flex-column col-md-6 col-12 p-5 gap-2 card">
