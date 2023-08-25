@@ -4,6 +4,7 @@ import Authentication from './components/Authentication';
 import SignIn from './components/auth/SignIn';
 import SignUp from './components/auth/SignUp';
 import Home from './components/home/Home';
+import MyReservations from './components/reservations';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/login" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/reservations" element={<MyReservations />} />
         </Routes>
       </section>
     </>
