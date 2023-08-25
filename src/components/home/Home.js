@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Card from './Card';
-import Card1 from './Card1';
 import { fetchresorts } from '../reducers/resortsSlice';
 
 function Home() {
@@ -54,14 +53,12 @@ function Home() {
             responsive={responsive}
             ssr={true} // means to render carousel on server-side.
             infinite={true}
-            // autoPlay={this.props.deviceType !== "mobile" ? true : false}
             autoPlaySpeed={1000}
             keyBoardControl={true}
             customTransition="all .5"
             transitionDuration={500}
             containerClass="carousel-container"
             removeArrowOnDeviceType={[]}
-            // deviceType={this.props.deviceType}
             dotListClass="custom-dot-list-style"
             itemClass="carousel-item-padding-40-px"
             >
