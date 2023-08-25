@@ -12,9 +12,9 @@ const Navbar = () => {
 
   return (
     <>
-      <header className="bg-dark text-light d-flex justify-content-between">
+      <header className="bg-dark text-light d-block d-md-none d-flex justify-content-between">
         <i className="fa-solid fa-bars" role="button" tabIndex={0} onClick={openMenu} onKeyDown={openMenu} aria-label="toggle nav" />
-        <h1>hi</h1>
+        <h1 className="d-block d-md-none">{data[0].name ? data[0].name : 'unknown'}</h1>
       </header>
       <nav className={`col-4 col-md-2 flex-column ${sidebar ? 'open' : ''}`}>
         <p><i className="fa-solid fa-x text-light" role="button" tabIndex={0} onClick={openMenu} onKeyDown={openMenu} aria-label="toggle nav" /></p>
