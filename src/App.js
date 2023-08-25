@@ -22,6 +22,7 @@ function App() {
               <Route path="/join" element={<Navigate to="/" />} />
               <Route path="/login" element={<Navigate to="/" />} />
               <Route path="/signup" element={<Navigate to="/" />} />
+              <Route path="/reservations" element={<MyReservations />} />
             </>
           ) : (
             <>
@@ -30,12 +31,8 @@ function App() {
               <Route path="/login" element={<SignIn />} />
               <Route path="/signup" element={<SignUp />} />
             </>
-           <Route path="/join" element={<Authentication />} />
-           <Route path="/login" element={<SignIn />} />
-           <Route path="/signup" element={<SignUp />} />
-           <Route path="/home" element={<Home />} />
-           <Route path="/reservations" element={<MyReservations />} />
           )}
+
         </Routes>
       </section>
     </>
