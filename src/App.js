@@ -1,24 +1,23 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import AddReservation from './routes/AddReservation';
-import DeleteReservation from './routes/DeleteReservation';
-import Details from './routes/Details';
-import Home from './routes/Home';
-import Reservations from './routes/Reservations';
-import Navbar from './components/Navbar';
-import './styles/App.css';
-
-const App = () => (
-  <Router>
+import Navbar from "./components/Navbar";
+import Authentication from "./components/Authentication"
+import SignIn from "./components/auth/SignIn";
+import SignUp from "./components/auth/SignUp";
+import { Routes, Route } from "react-router-dom";
+import Home from "./components/home/Home";
+function App() {
+  return (
+    <>
     <Navbar />
+    <section className="main col-md-8">
     <Routes>
-      <Route path="/home" element={<Home />} />
-      <Route path="/add-reservation" element={<AddReservation />} />
-      <Route path="/delete-reservation" element={<DeleteReservation />} />
-      <Route path="/details" element={<Details />} />
-      <Route path="/reservations" element={<Reservations />} />
+        <Route path='/join' element={<Authentication />} />
+        <Route path="/login" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/home" element={<Home />} />
     </Routes>
-  </Router>
-);
+    </section>
+    </>
+  );
+}
 
 export default App;

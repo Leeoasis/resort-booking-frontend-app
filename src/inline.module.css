@@ -1,0 +1,23 @@
+.text {
+  text-decoration: none;
+  color: #fff;
+  background-color: blue;
+  transition: 0.5s;
+  border-radius: 5px;
+}
+
+.text:hover {
+  background-color: rgb(166, 166, 240);
+  color: #000;
+}
+
+.join {
+  background-color: rgb(14, 83, 144);
+  color: #fff;
+  width: 100%;
+  transition: 0.5s;
+}
+
+.join:hover {
+  background-color: #a09ded;
+}
