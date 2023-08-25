@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 import Authentication from './components/Authentication';
 import SignIn from './components/auth/SignIn';
 import SignUp from './components/auth/SignUp';
-import Home from './components/home';
+import Home from './components/home/Home';
 
 function App() {
   const hasNonNullData = localStorage.getItem('data');

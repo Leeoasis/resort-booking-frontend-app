@@ -1,8 +1,8 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import styles from '../../inline.module.css';
-import logoutApi from '../reducers/api';
-import { update } from './auth';
+import styles from '../../styles/inline.module.css';
+import logoutApi from '../../redux/sessions/api';
+import { update } from '../../redux/sessions/auth';
 
 const Logout = () => {
   const nav = useNavigate();

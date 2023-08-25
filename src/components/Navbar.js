@@ -1,7 +1,7 @@
 import { Link, NavLink } from 'react-router-dom';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import styles from '../inline.module.css';
+import styles from '../styles/inline.module.css';
 import logo from './images/logo.png';
 import Logout from './auth/Logout';
 
@@ -12,10 +12,6 @@ const Navbar = () => {
 
   return (
     <>
-      <header className="bg-dark text-light d-block d-md-none d-flex justify-content-between">
-        <i className="fa-solid fa-bars" role="button" tabIndex={0} onClick={openMenu} onKeyDown={openMenu} aria-label="toggle nav" />
-        <h1 className="d-block d-md-none">{data[0].name ? data[0].name : 'unknown'}</h1>
-      </header>
       <nav className={`col-4 col-md-2 flex-column ${sidebar ? 'open' : ''}`}>
         <p><i className="fa-solid fa-x text-light" role="button" tabIndex={0} onClick={openMenu} onKeyDown={openMenu} aria-label="toggle nav" /></p>
         <img className="nav-logo" src={logo} width={140} height={40} alt="Navbar logo" />

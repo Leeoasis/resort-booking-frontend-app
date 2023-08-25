@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { update } from './auth/auth';
+import { update } from '../redux/sessions/auth';
 
 const Home = () => {
   const dispatch = useDispatch();

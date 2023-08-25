@@ -2,6 +2,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import { fetchsession } from '../../redux/sessions/sessions';
+import { update } from '../../redux/sessions/auth';
 
 const SignIn = () => {
   const dispatch = useDispatch();
