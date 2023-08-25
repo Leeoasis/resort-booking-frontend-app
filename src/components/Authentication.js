@@ -1,13 +1,7 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import HomeLogin from './auth/HomeLogin';
-import { update } from './auth/auth';
 
 const Authentication = () => {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(update());
-  }, [dispatch]);
   const app = useSelector((state) => state);
   console.log(app);
   return (

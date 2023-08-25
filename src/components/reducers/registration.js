@@ -7,6 +7,7 @@ export const fetchreg = createAsyncThunk(
     const url = 'http://127.0.0.1:3000/signup';
     const response = await axios.post(url, user);
     localStorage.setItem('token', response.headers.get('Authorization'));
+    localStorage.setItem('data', JSON.stringify(response.data));
     return response.data;
   },
 );

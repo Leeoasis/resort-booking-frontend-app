@@ -8,6 +8,7 @@ const SignUp = () => {
   const sessionState = useSelector((state) => state.sign_up);
   const [user, setUser] = useState({
     user: {
+      name: '',
       email: '',
       password: '',
       password_confirmation: '',
@@ -35,6 +36,18 @@ const SignUp = () => {
       <form className="gap-3 d-flex flex-column form-container card p-5" onSubmit={handleSubmit}>
         <div className="mb-3 d-flex justify-content-center">
           <h3>Sign Up</h3>
+        </div>
+        <div className="mb-3" role="group" aria-labelledby="name-label">
+          {/* eslint-disable jsx-a11y/label-has-associated-control */}
+          <label id="name-label" htmlFor="name">Name:</label>
+          <input
+            id="name"
+            type="text"
+            className="form-control"
+            value={user.user.name}
+            name="name"
+            onChange={controlReg}
+          />
         </div>
         <div className="mb-3" role="group" aria-labelledby="email-label">
           {/* eslint-disable jsx-a11y/label-has-associated-control */}

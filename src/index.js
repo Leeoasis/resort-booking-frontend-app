@@ -6,8 +6,10 @@ import { Provider } from 'react-redux';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './components/store';
+import { update } from './components/auth/auth';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+store.dispatch(update());
 root.render(
   <BrowserRouter>
     <Provider store={store}>
