@@ -4,16 +4,18 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import Card from './Card';
 import { fetchresorts } from '../../redux/resortsSlice';
+import { update } from '../../redux/sessions/auth';
 
 function Home() {
   const dispatch = useDispatch();
   const { resorts, loading } = useSelector((store) => store.resorts);
 
   useEffect(() => {
+    dispatch(update());
     if (resorts.length === 0) {
       dispatch(fetchresorts());
     }
-  }, [dispatch, resorts]);
+  }, [dispatch]);
 
   const responsive = {
     desktop: {

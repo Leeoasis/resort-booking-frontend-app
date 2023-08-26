@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 import { fetchResort } from '../../redux/features/resortSlice';
+import { update } from '../../redux/sessions/auth';
 
 const ResortDetails = () => {
   const { resortId } = useParams();
@@ -9,6 +10,7 @@ const ResortDetails = () => {
   const resort = useSelector((state) => state.resorts.resort);
 
   useEffect(() => {
+    dispatch(update());
     dispatch(fetchResort(resortId));
   }, [dispatch, resortId]);
 

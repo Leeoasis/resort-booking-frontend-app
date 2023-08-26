@@ -30,6 +30,7 @@ function App() {
               <Route path="/join" element={<Authentication />} />
               <Route path="/login" element={<SignIn />} />
               <Route path="/signup" element={<SignUp />} />
+              <Route path="/" element={<Navigate to="/join" />} />
             </>
           )}
 

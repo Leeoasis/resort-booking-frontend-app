@@ -3,11 +3,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getReservations } from '../../redux/features/resortReserveSlice';
 import ResortCard from './ResortCard';
+import { update } from '../../redux/sessions/auth';
 
 const MyReservations = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    dispatch(update());
     dispatch(getReservations());
   }, [dispatch]);
 
