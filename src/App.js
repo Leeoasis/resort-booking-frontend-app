@@ -5,6 +5,7 @@ import Authentication from './components/Authentication';
 import SignIn from './components/auth/SignIn';
 import SignUp from './components/auth/SignUp';
 import Home from './components/home/Home';
+import MyReservations from './components/reservations/reservations';
 
 function App() {
   const hasNonNullData = localStorage.getItem('data');
@@ -21,6 +22,7 @@ function App() {
               <Route path="/join" element={<Navigate to="/" />} />
               <Route path="/login" element={<Navigate to="/" />} />
               <Route path="/signup" element={<Navigate to="/" />} />
+              <Route path="/reservations" element={<MyReservations />} />
             </>
           ) : (
             <>
@@ -30,6 +32,7 @@ function App() {
               <Route path="/signup" element={<SignUp />} />
             </>
           )}
+
         </Routes>
       </section>
     </>
