@@ -1,14 +1,15 @@
 import React from 'react'; // Import React
 import { Routes, Route, Navigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import Navbar from './components/Navbar';
 import Authentication from './components/Authentication';
 import SignIn from './components/auth/SignIn';
 import SignUp from './components/auth/SignUp';
 import Home from './components/home/Home';
-import MyReservations from './components/reservations/reservations';
 
 function App() {
-  const hasNonNullData = localStorage.getItem('data');
+  const { data } = useSelector((state) => state);
+  const { loggedIn } = data;
 
   return (
     <>
@@ -16,13 +17,12 @@ function App() {
       <section className="main col-md-8">
         <Routes>
           {/* User will be able to visit */}
-          <Route path="/" element={<Home />} />
-          {hasNonNullData ? (
+          {loggedIn ? (
             <>
+              <Route path="/" element={<Home />} />
               <Route path="/join" element={<Navigate to="/" />} />
               <Route path="/login" element={<Navigate to="/" />} />
               <Route path="/signup" element={<Navigate to="/" />} />
-              <Route path="/reservations" element={<MyReservations />} />
             </>
           ) : (
             <>
@@ -33,7 +33,6 @@ function App() {
               <Route path="/" element={<Navigate to="/join" />} />
             </>
           )}
-
         </Routes>
       </section>
     </>

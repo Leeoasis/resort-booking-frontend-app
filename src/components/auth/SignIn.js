@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 import { fetchsession } from '../../redux/sessions/sessions';
@@ -7,7 +7,6 @@ import { update } from '../../redux/sessions/auth';
 const SignIn = () => {
   const dispatch = useDispatch();
   const sessionState = useSelector((state) => state.sign_in);
-  const nav = useNavigate();
   const [login, setLogin] = useState({
     user: {
       email: '',
@@ -30,7 +29,6 @@ const SignIn = () => {
     e.preventDefault();
     await dispatch(fetchsession(login));
     dispatch(update());
-    nav('/');
   };
 
   return (

@@ -6,7 +6,8 @@ import logo from './images/logo.png';
 import Logout from './auth/Logout';
 
 const Navbar = () => {
-  const { data } = useSelector((state) => state.data);
+  const { data } = useSelector((state) => state);
+  const { loggedIn } = data;
   const [sidebar, SetsideBar] = useState(false);
   const openMenu = () => SetsideBar(!sidebar);
 
@@ -16,7 +17,7 @@ const Navbar = () => {
         <p><i className="fa-solid fa-x text-light" role="button" tabIndex={0} onClick={openMenu} onKeyDown={openMenu} aria-label="toggle nav" /></p>
         <img className="nav-logo" src={logo} width={140} height={40} alt="Navbar logo" />
         <ul className=" d-flex flex-column fs-6 pt-4">
-          {data && data.length > 0 && !data.includes(null) && (
+          {loggedIn && (
             <>
               <li className="nav-item-list"><NavLink to="/" activeClassName="active" role="button" tabIndex={0} onClick={openMenu} onKeyDown={openMenu} aria-label="toggle nav"><p className="tab">Home</p></NavLink></li>
               <li className="nav-item-list"><NavLink to="/add-reservation" activeClassName="active" role="button" tabIndex={0} onClick={openMenu} onKeyDown={openMenu} aria-label="toggle nav"><p className="tab">Add</p></NavLink></li>
@@ -28,7 +29,7 @@ const Navbar = () => {
         </ul>
         <footer className="d-flex flex-column">
           <div className="d-flex col-12">
-            {data && data.length > 0 && !data.includes(null) ? (
+            {loggedIn ? (
               <Logout />
             ) : (
               <Link className={styles.join} to="/join">
