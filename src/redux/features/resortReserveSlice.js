@@ -5,7 +5,6 @@ const baseUrl = 'http://127.0.0.1:3000/api/v1/bookings/';
 export const postReservation = createAsyncThunk(
   'reservation/postReservation', // Unique action type
   async (reserve) => {
-    console.log(reserve);
     const response = await fetch(baseUrl, {
       method: 'POST',
       headers: {
