@@ -5,6 +5,7 @@ import sessionSlice from './sessions/sessions';
 import logoutSlice from './sessions/logoutSlice';
 import authSlice from './sessions/auth';
 import reservationReducer from './features/resortReserveSlice';
+import resortReducer from './forms/resortFormSlice';
 
 const store = configureStore({
   reducer: {
@@ -14,6 +15,7 @@ const store = configureStore({
     sign_up: registrationSlice,
     resorts: resortsReducer,
     reservation: reservationReducer,
+    resortForm: resortReducer,
   },
 });
 
