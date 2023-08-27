@@ -9,7 +9,7 @@ const ReservationForm = () => {
     reservation: { isLoading },
     resorts: { resorts, resortSelected },
   } = useSelector((store) => store);
-  const user = JSON.parse(localStorage.getItem('user'));
+  const user = JSON.parse(localStorage.getItem('data'));
   const dispatch = useDispatch();
   const [selectedCity, setSelectedCity] = useState('');
   const [reservationDate, setReservationDate] = useState('');
@@ -32,7 +32,6 @@ const ReservationForm = () => {
     event.preventDefault();
     const today = new Date();
     const selectedReservationDate = new Date(reservationDate);
-    const userId = user ? user.id : null;
 
     if (selectedReservationDate < today) {
       setError('Reservation date cannot be in the past.');
@@ -45,13 +44,13 @@ const ReservationForm = () => {
     }
     setError('');
     await dispatch(postReservation({
-      user_id: userId,
+      user_id: user.id,
       resort_id: resortId,
-      selected_date: selectedCity,
       reservation_date: reservationDate,
       returning_date: returningDate,
+      selected_city: selectedCity,
     }));
-    navigate('/my-reservations');
+    navigate('/reservations');
   };
 
   return (
@@ -101,7 +100,7 @@ const ReservationForm = () => {
             className="form-control"
             id="resort"
             value={resortId}
-            onChange={(e) => setResortId(e.target.value)}
+            onChange={(e) => setResortId(parseInt(e.target.value, 10))}
           >
             {!resortSelected ? <option value="">Select a resort</option> : <option value={resortSelected.id}>{resortSelected.name}</option>}
             {resorts.map((resort) => (
