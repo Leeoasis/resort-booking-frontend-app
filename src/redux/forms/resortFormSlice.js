@@ -1,25 +1,28 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-const url = 'https://localhost:3000/api/v1/bookings';
+const url = 'http://localhost:3000/api/v1/resorts';
 
 export const postResorts = createAsyncThunk('fromSlice/postResorts', async (resort) => {
+  const authToken = localStorage.getItem('token');
   const response = await fetch(url, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
+      Authorization: `${authToken}`,
     },
     body: JSON.stringify({
+      user_id: resort.user_id,
       name: resort.name,
-      image: resort.image_url,
       address: resort.address,
+      image_url: resort.image,
       description: resort.description,
-      phone: resort.phone_number,
+      phone_number: resort.phoneNumber,
       email: resort.email,
       city: resort.city,
       country: resort.country,
-      available: resort.available_rooms,
-      occupancy: resort.max_occupancy,
-      price: resort.base_price,
+      available_rooms: resort.availableRooms,
+      max_occupancy: resort.maxOccupancy,
+      base_price: resort.basePrice,
     }),
   });
   const data = await response.json();

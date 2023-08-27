@@ -42,7 +42,7 @@ const MyReservations = () => {
           <h5 className="card-title">No Reservations At The Moment</h5>
           <p className="card-text">Please make Reservations by Filling Out the Form</p>
           <div className="card-footer d-flex justify-content-between">
-            <Link to="/make-reservations">
+            <Link to="/add-reservation">
               <button type="button" className="btn btn-primary">Fill Form</button>
             </Link>
             <Link to="/home">
