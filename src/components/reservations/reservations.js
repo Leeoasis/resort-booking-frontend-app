@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getReservations } from '../../redux/features/resortReserveSlice';
+import { fetchresorts } from '../../redux/features/resortsSlice';
 import ResortCard from './ResortCard';
 
 const MyReservations = () => {
@@ -9,6 +10,7 @@ const MyReservations = () => {
 
   useEffect(() => {
     dispatch(getReservations());
+    dispatch(fetchresorts());
   }, [dispatch]);
 
   const { resorts: { resorts }, reservation: { reserve } } = useSelector((store) => store);
@@ -34,7 +36,6 @@ const MyReservations = () => {
       key={resort.id}
     />
   ));
-
   if (!resortData.length) {
     return (
       <div className="card w-50 no-reserve m-auto mt-5">

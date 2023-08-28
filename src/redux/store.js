@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import resortsReducer from './resortsSlice';
+import resortsReducer from './features/resortsSlice';
 import registrationSlice from './sessions/registration';
 import sessionSlice from './sessions/sessions';
 import logoutSlice from './sessions/logoutSlice';

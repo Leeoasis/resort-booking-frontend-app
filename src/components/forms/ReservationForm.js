@@ -1,14 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import '../../styles/forms.css';
 import { postReservation } from '../../redux/features/resortReserveSlice';
+import { fetchresorts } from '../../redux/features/resortsSlice';
 
 const ReservationForm = () => {
   const navigate = useNavigate();
   const {
     reservation: { isLoading },
-    resorts: { resorts, resortSelected },
+    resorts: { resortSelected },
   } = useSelector((store) => store);
   const user = JSON.parse(localStorage.getItem('data'));
   const dispatch = useDispatch();
@@ -17,6 +18,12 @@ const ReservationForm = () => {
   const [returningDate, setReturningDate] = useState('');
   const [resortId, setResortId] = useState(resortSelected ? resortSelected.id : '');
   const [error, setError] = useState('');
+  const { resorts } = useSelector((store) => store.resorts);
+
+  useEffect(() => {
+    dispatch(fetchresorts());
+  },
+  [dispatch]);
   const cities = [
     'New York',
     'Los Angeles',

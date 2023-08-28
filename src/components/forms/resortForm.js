@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { postResorts } from '../../redux/forms/resortFormSlice';
-import { fetchResorts } from '../../redux/features/resortSlice';
+import { fetchresorts } from '../../redux/features/resortsSlice';
 
 const ResortForm = () => {
   const user = JSON.parse(localStorage.getItem('data'));
@@ -40,7 +40,7 @@ const ResortForm = () => {
         basePrice,
       }));
       navigate('/');
-      dispatch(fetchResorts());
+      dispatch(fetchresorts());
     } catch (error) {
       setError(error.message);
     }
