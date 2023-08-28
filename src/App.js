@@ -9,6 +9,7 @@ import Home from './components/home/Home';
 import MyReservations from './components/reservations/reservations';
 import ReservationForm from './components/forms/ReservationForm';
 import ResortForm from './components/forms/resortForm';
+import ResortDelete from './components/details/DeleteResort';
 
 function App() {
   const { data } = useSelector((state) => state);
@@ -29,6 +30,7 @@ function App() {
               <Route path="/reservations" element={<MyReservations />} />
               <Route path="/add-reservation" element={<ReservationForm />} />
               <Route path="/add-resort" element={<ResortForm />} />
+              <Route path="/Delete-resort" element={<ResortDelete />} />
             </>
           ) : (
             <>
