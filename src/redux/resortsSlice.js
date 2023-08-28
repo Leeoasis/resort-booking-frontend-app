@@ -5,6 +5,7 @@ const url = 'http://localhost:3000/api/v1/resorts';
 
 const initialState = {
   resorts: [],
+  resort: {},
   status: 'idle',
   loading: false,
   error: null,
@@ -19,6 +20,19 @@ export const fetchresorts = createAsyncThunk('resorts/fetchresorts', async () =>
     return isRejectedWithValue(error.response.data);
   }
 });
+
+// Fetch a single resort
+export const fetchResort = createAsyncThunk(
+  'resort/fetchResort',
+  async (id, thunkApi) => {
+    try {
+      const response = await axios.get(`${url}/${id}`);
+      return response.data;
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.response.data);
+    }
+  },
+);
 
 const resortsSlice = createSlice({
   name: 'resorts',
@@ -53,6 +67,20 @@ const resortsSlice = createSlice({
         state.loading = false;
       })
       .addCase(fetchresorts.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.error.message;
+      })
+      // fetch a single resort
+      .addCase(fetchResort.pending, (state) => {
+        state.status = 'loading';
+        state.loading = true;
+      })
+      .addCase(fetchResort.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.resort = action.payload;
+        state.loading = false;
+      })
+      .addCase(fetchResort.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.error.message;
       });

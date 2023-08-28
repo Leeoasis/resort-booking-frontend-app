@@ -13,7 +13,7 @@ function Home() {
     if (resorts.length === 0) {
       dispatch(fetchresorts());
     }
-  }, [dispatch]);
+  }, [dispatch, resorts.length]); // Added 'resorts.length' to the dependency array
 
   const responsive = {
     desktop: {
