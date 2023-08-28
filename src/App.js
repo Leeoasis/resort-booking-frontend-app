@@ -6,6 +6,7 @@ import Authentication from './components/Authentication';
 import SignIn from './components/auth/SignIn';
 import SignUp from './components/auth/SignUp';
 import Home from './components/home/Home';
+import DetailsPage from './components/details/detailsPage';
 
 function App() {
   const { data } = useSelector((state) => state);
@@ -23,6 +24,7 @@ function App() {
               <Route path="/join" element={<Navigate to="/" />} />
               <Route path="/login" element={<Navigate to="/" />} />
               <Route path="/signup" element={<Navigate to="/" />} />
+              <Route path="/resorts/:id" element={<DetailsPage />} />
             </>
           ) : (
             <>

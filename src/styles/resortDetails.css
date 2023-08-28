@@ -1,0 +1,68 @@
+.rooms-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2rem;
+}
+
+.carousels {
+  width: 40vw;
+}
+
+.room-details {
+  display: flex;
+  flex-direction: column;
+  margin-right: auto;
+  width: 40vw;
+}
+
+.room-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.rooms,
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.rooms ul,
+.details ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  list-style: none;
+  padding: 0;
+  gap: 2rem;
+}
+
+.details ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rooms ul li,
+.details ul li span {
+  font-weight: bold;
+}
+
+.react-multiple-carousel__arrow--left[type="button"] {
+  display: none;
+}
+
+.react-multiple-carousel__arrow--right[type="button"] {
+  display: none;
+}
+
+.reserve-link {
+  width: 10rem;
+  align-self: center;
+}
+
+.btn-primary {
+  width: 10rem;
+}
