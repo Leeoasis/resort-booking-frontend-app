@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
+import '../../styles/forms.css';
 import { postReservation } from '../../redux/features/resortReserveSlice';
 
 const ReservationForm = () => {
@@ -54,62 +55,70 @@ const ReservationForm = () => {
   };
 
   return (
-    <div className="form-wrap">
-      <h3>Reserve A Resort</h3>
+    <div className="form-control">
+      <h3 className="text-center mb-3">Reserve A Resort</h3>
       <form onSubmit={handleReservation}>
-        {error && <small className="fs-5, text-danger">{error}</small>}
-        <label className="form-label" htmlFor="city">
-          Select your city
-          <select
-            className="form-control"
-            id="city"
-            value={selectedCity}
-            onChange={(e) => setSelectedCity(e.target.value)}
-          >
-            <option value="">City of reservation</option>
-            {cities.map((city) => (
-              <option key={city} value={city}>
-                {city}
-              </option>
-            ))}
-          </select>
-        </label>
-        <label className="form-label" htmlFor="date">
-          Reservation Date
-          <input
-            className="form-control"
-            type="date"
-            id="date"
-            value={reservationDate}
-            onChange={(e) => setReservationDate(e.target.value)}
-          />
-        </label>
-        <label className="form-label" htmlFor="date-return">
-          Date of Return
-          <input
-            className="form-control"
-            type="date"
-            id="date-return"
-            value={returningDate}
-            onChange={(e) => setReturningDate(e.target.value)}
-          />
-        </label>
-        <label className="form-label" htmlFor="resort">
-          Select your resort
-          <select
-            className="form-control"
-            id="resort"
-            value={resortId}
-            onChange={(e) => setResortId(parseInt(e.target.value, 10))}
-          >
-            {!resortSelected ? <option value="">Select a resort</option> : <option value={resortSelected.id}>{resortSelected.name}</option>}
-            {resorts.map((resort) => (
-              <option key={resort.id} value={resort.id}>
-                {resort.name}
-              </option>
-            ))}
-          </select>
-        </label>
+        {error && <small className="d-flex, fs-5, text-danger">{error}</small>}
+        <div className="mb-3">
+          <label className="form-label mb-3" htmlFor="city">
+            Select your city
+            <select
+              className="form-select select-input mb-3"
+              id="city"
+              value={selectedCity}
+              onChange={(e) => setSelectedCity(e.target.value)}
+            >
+              <option className="form-control mb-3" value="">City of reservation</option>
+              {cities.map((city) => (
+                <option key={city} value={city}>
+                  {city}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
+        <div className="mb-3">
+          <label className="form-label" htmlFor="date">
+            Reservation Date
+            <input
+              className="form-control"
+              type="date"
+              id="date"
+              value={reservationDate}
+              onChange={(e) => setReservationDate(e.target.value)}
+            />
+          </label>
+        </div>
+        <div className="mb-3">
+          <label className="form-label" htmlFor="date-return">
+            Date of Return
+            <input
+              className="form-control"
+              type="date"
+              id="date-return"
+              value={returningDate}
+              onChange={(e) => setReturningDate(e.target.value)}
+            />
+          </label>
+        </div>
+        <div className="mb-3">
+          <label className="form-label" htmlFor="resort">
+            Select your resort
+            <select
+              className="form-control"
+              id="resort"
+              value={resortId}
+              onChange={(e) => setResortId(parseInt(e.target.value, 10))}
+            >
+              {!resortSelected ? <option value="">Select a resort</option> : <option value={resortSelected.id}>{resortSelected.name}</option>}
+              {resorts.map((resort) => (
+                <option key={resort.id} value={resort.id}>
+                  {resort.name}
+                </option>
+              ))}
+            </select>
+          </label>
+        </div>
 
         <div className="link mt-2 d-flex justify-content-between w-100">
           <button type="submit" className="btn btn-primary" disabled={isLoading}>
