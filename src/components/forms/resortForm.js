@@ -62,6 +62,7 @@ const ResortForm = () => {
                   placeholder="Resort Name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
+                  required
                 />
               </label>
             </div>
@@ -74,6 +75,7 @@ const ResortForm = () => {
                   placeholder="Resort E-mail"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
+                  required
                 />
               </label>
             </div>
@@ -88,6 +90,7 @@ const ResortForm = () => {
                   placeholder="Phone number"
                   value={phoneNumber}
                   onChange={(e) => setPhoneNumber(parseInt(e.target.value, 10))}
+                  required
                 />
               </label>
             </div>
@@ -100,6 +103,7 @@ const ResortForm = () => {
                   placeholder="Address"
                   value={address}
                   onChange={(e) => setAddress(e.target.value)}
+                  required
                 />
               </label>
             </div>
@@ -114,6 +118,7 @@ const ResortForm = () => {
                   placeholder="Image Link"
                   value={image}
                   onChange={(e) => setImage(e.target.value)}
+                  required
                 />
               </label>
             </div>
@@ -126,6 +131,7 @@ const ResortForm = () => {
                   placeholder="Base Price"
                   value={basePrice}
                   onChange={(e) => setBasePrice(parseInt(e.target.value, 10))}
+                  required
                 />
               </label>
             </div>
@@ -140,6 +146,7 @@ const ResortForm = () => {
                   placeholder="City"
                   value={city}
                   onChange={(e) => setCity(e.target.value)}
+                  required
                 />
               </label>
             </div>
@@ -152,6 +159,7 @@ const ResortForm = () => {
                   placeholder="Country"
                   value={country}
                   onChange={(e) => setCountry(e.target.value)}
+                  required
                 />
               </label>
             </div>
@@ -166,6 +174,7 @@ const ResortForm = () => {
                   placeholder="Rooms"
                   value={availableRooms}
                   onChange={(e) => setAvailableRooms(parseInt(e.target.value, 10))}
+                  required
                 />
               </label>
             </div>
@@ -178,6 +187,7 @@ const ResortForm = () => {
                   placeholder="Occupancy"
                   value={maxOccupancy}
                   onChange={(e) => setMaxOccupancy(parseInt(e.target.value, 10))}
+                  required
                 />
               </label>
             </div>
@@ -191,6 +201,7 @@ const ResortForm = () => {
                 placeholder="Resort Description"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
+                required
               />
             </label>
           </div>
