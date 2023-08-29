@@ -104,7 +104,7 @@ const ResortDetails = () => {
                 </ul>
               </div>
             </div>
-            <Link to={`/bookings/new/${resort.id}`} className="reserve-link">
+            <Link to="/add-reservation" className="reserve-link">
               <button type="button" className="btn btn-primary">
                 Reserve
                 {' '}

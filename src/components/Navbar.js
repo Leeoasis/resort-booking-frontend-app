@@ -22,7 +22,7 @@ const Navbar = () => {
               <li className="nav-item-list"><NavLink to="/" activeClassName="active" role="button" tabIndex={0} onClick={openMenu} onKeyDown={openMenu} aria-label="toggle nav"><p className="tab">Home</p></NavLink></li>
               <li className="nav-item-list"><NavLink to="/add-resort" activeClassName="active" role="button" tabIndex={0} onClick={openMenu} onKeyDown={openMenu} aria-label="toggle nav"><p className="tab">Add Resort</p></NavLink></li>
               <li className="nav-item-list"><NavLink to="/Delete-resort" activeClassName="active" role="button" tabIndex={0} onClick={openMenu} onKeyDown={openMenu} aria-label="toggle nav"><p className="tab">Delete Resort</p></NavLink></li>
-              <li className="nav-item-list"><NavLink to="/details" activeClassName="active" role="button" tabIndex={0} onClick={openMenu} onKeyDown={openMenu} aria-label="toggle nav"><p className="tab">Details</p></NavLink></li>
+              <li className="nav-item-list"><NavLink to="/add-reservation" activeClassName="active" role="button" tabIndex={0} onClick={openMenu} onKeyDown={openMenu} aria-label="toggle nav"><p className="tab">Add Reservation</p></NavLink></li>
               <li className="nav-item-list"><NavLink to="/reservations" activeClassName="active" role="button" tabIndex={0} onClick={openMenu} onKeyDown={openMenu} aria-label="toggle nav"><p className="tab">Reservations</p></NavLink></li>
             </>
           )}

@@ -10,7 +10,7 @@ import DetailsPage from './components/details/detailsPage';
 import MyReservations from './components/reservations/reservations';
 import ReservationForm from './components/forms/ReservationForm';
 import ResortForm from './components/forms/resortForm';
-import ResortDelete from './components/details/DeleteResort';
+import ResortDelete from './components/forms/DeleteResort';
 
 function App() {
   const { data } = useSelector((state) => state);
