@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  width: 100%;
   gap: 2rem;
 }
 
@@ -12,7 +13,6 @@
 .room-details {
   display: flex;
   flex-direction: column;
-  margin-right: auto;
   width: 40vw;
 }
 
@@ -50,13 +50,13 @@
   font-weight: bold;
 }
 
-/* .react-multiple-carousel__arrow--left[type="button"] {
+.react-multiple-carousel__arrow--left[type="button"] {
   display: none;
 }
 
 .react-multiple-carousel__arrow--right[type="button"] {
   display: none;
-} */
+}
 
 .reserve-link {
   width: 10rem;
