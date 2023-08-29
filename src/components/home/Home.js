@@ -5,7 +5,7 @@ import 'react-multi-carousel/lib/styles.css';
 import Card from './Card';
 import { fetchresorts } from '../../redux/features/resortsSlice';
 
-function Home() {
+const Home = () => {
   const dispatch = useDispatch();
   const { resorts, loading } = useSelector((store) => store.resorts);
 
@@ -78,6 +78,6 @@ function Home() {
       </Carousel>
     </>
   );
-}
+};
 
 export default Home;
