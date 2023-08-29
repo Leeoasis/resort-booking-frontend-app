@@ -12,7 +12,7 @@ import ReservationForm from './components/forms/ReservationForm';
 import ResortForm from './components/forms/resortForm';
 import ResortDelete from './components/forms/DeleteResort';
 
-function App() {
+const App = () => {
   const { data } = useSelector((state) => state);
   const { loggedIn } = data;
 
@@ -47,6 +47,6 @@ function App() {
       </section>
     </>
   );
-}
+};
 
 export default App;
