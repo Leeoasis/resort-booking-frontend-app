@@ -13,7 +13,6 @@ function Home() {
     dispatch(fetchresorts());
   }, [dispatch]);
 
-
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },

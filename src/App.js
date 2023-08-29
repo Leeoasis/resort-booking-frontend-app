@@ -12,7 +12,6 @@ import ReservationForm from './components/forms/ReservationForm';
 import ResortForm from './components/forms/resortForm';
 import ResortDelete from './components/details/DeleteResort';
 
-
 function App() {
   const { data } = useSelector((state) => state);
   const { loggedIn } = data;
