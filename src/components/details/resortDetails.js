@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 import Carousel from 'react-multi-carousel';
 import { fetchResort } from '../../redux/features/resortsSlice';
+import sampleImages from './images';
 import '../../styles/resortDetails.css';
 
 const ResortDetails = () => {
@@ -49,7 +50,7 @@ const ResortDetails = () => {
             transitionDuration={500}
             containerClass="carousels"
           >
-            {resort.photos.map((item) => (
+            {sampleImages.map((item) => (
               <div key={item.id}>
                 <img
                   src={item.image}
