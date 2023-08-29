@@ -24,7 +24,7 @@ export const postReservation = createAsyncThunk(
 );
 
 export const getReservations = createAsyncThunk(
-  'reservation/getReservations', // Unique action type
+  'reservation/getReservations',
   async () => {
     const requestOptions = {
       method: 'GET',
@@ -48,7 +48,7 @@ const initialState = {
 const reservationSlice = createSlice({
   name: 'reservation',
   initialState,
-  reducers: {}, // You can define additional reducers here if needed
+  reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(postReservation.pending, (state) => ({

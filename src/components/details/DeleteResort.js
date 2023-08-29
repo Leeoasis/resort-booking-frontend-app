@@ -6,11 +6,15 @@ import fetchDelete from '../../redux/features/deleteSlice';
 const ResortDelete = () => {
   const { resorts } = useSelector((state) => state.resorts);
   const dispatch = useDispatch();
-  const deleteResort = () => fetchDelete();
 
   useEffect(() => {
     dispatch(fetchresorts());
-  }, [dispatch, deleteResort]);
+  }, [dispatch]);
+
+  const handleDelete = (resortId) => {
+    dispatch(fetchDelete(resortId));
+    window.location.reload();
+  };
 
   return (
     <section className="d-flex p-5">
@@ -26,7 +30,13 @@ const ResortDelete = () => {
                     {item.name}
                   </p>
                   {' '}
-                  <button className="btn btn-primary" type="button" onClick={() => dispatch(fetchDelete(item.id))}>Delete</button>
+                  <button
+                    className="btn btn-primary"
+                    type="button"
+                    onClick={() => handleDelete(item.id)}
+                  >
+                    Delete
+                  </button>
                 </li>
               ))
 }
