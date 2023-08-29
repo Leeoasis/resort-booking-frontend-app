@@ -1,4 +1,4 @@
-import React from 'react'; // Import React
+import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Navbar from './components/Navbar';
@@ -7,6 +7,11 @@ import SignIn from './components/auth/SignIn';
 import SignUp from './components/auth/SignUp';
 import Home from './components/home/Home';
 import DetailsPage from './components/details/detailsPage';
+import MyReservations from './components/reservations/reservations';
+import ReservationForm from './components/forms/ReservationForm';
+import ResortForm from './components/forms/resortForm';
+import ResortDelete from './components/details/DeleteResort';
+
 
 function App() {
   const { data } = useSelector((state) => state);
@@ -25,6 +30,10 @@ function App() {
               <Route path="/login" element={<Navigate to="/" />} />
               <Route path="/signup" element={<Navigate to="/" />} />
               <Route path="/resorts/:id" element={<DetailsPage />} />
+              <Route path="/reservations" element={<MyReservations />} />
+              <Route path="/add-reservation" element={<ReservationForm />} />
+              <Route path="/add-resort" element={<ResortForm />} />
+              <Route path="/Delete-resort" element={<ResortDelete />} />
             </>
           ) : (
             <>
