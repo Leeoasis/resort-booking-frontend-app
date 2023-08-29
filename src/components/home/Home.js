@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import Card from './Card';
-import { fetchresorts } from '../../redux/resortsSlice';
+import { fetchresorts } from '../../redux/features/resortsSlice';
 
 function Home() {
   const dispatch = useDispatch();

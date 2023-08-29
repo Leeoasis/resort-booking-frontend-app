@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import ResortDetails from './resortDetails';
-import { fetchResort } from '../../redux/resortsSlice';
+import { fetchResort } from '../../redux/features/resortsSlice';
 import '../../styles/detailsPage.css';
 
 const DetailsPage = () => {
