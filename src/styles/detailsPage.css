@@ -9,8 +9,12 @@
 
 .resort-container h1 {
   position: absolute;
-  left: 20%;
+  top: 3%;
+  left: 15%;
   align-self: center;
+  color: #fcf9f9;
+  font-family: 'Great Vibes', cursive;
+  font-size: 4.5em;
 }
 
 .details-container {
