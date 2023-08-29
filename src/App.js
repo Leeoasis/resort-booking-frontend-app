@@ -6,6 +6,7 @@ import Authentication from './components/Authentication';
 import SignIn from './components/auth/SignIn';
 import SignUp from './components/auth/SignUp';
 import Home from './components/home/Home';
+import DetailsPage from './components/details/detailsPage';
 import MyReservations from './components/reservations/reservations';
 import ReservationForm from './components/forms/ReservationForm';
 import ResortForm from './components/forms/resortForm';
@@ -27,6 +28,7 @@ function App() {
               <Route path="/join" element={<Navigate to="/" />} />
               <Route path="/login" element={<Navigate to="/" />} />
               <Route path="/signup" element={<Navigate to="/" />} />
+              <Route path="/resorts/:id" element={<DetailsPage />} />
               <Route path="/reservations" element={<MyReservations />} />
               <Route path="/add-reservation" element={<ReservationForm />} />
               <Route path="/add-resort" element={<ResortForm />} />

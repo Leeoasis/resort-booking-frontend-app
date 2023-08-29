@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 function Card({
   id, name, description, flickrImages,
@@ -7,7 +8,9 @@ function Card({
   return (
     <div className="card-container" id={id}>
       <img className="card-img" src={flickrImages} width={500} alt="Resort one" />
-      <h4 className="card-title">{name}</h4>
+      <Link to={`/resorts/${id}`}>
+        <h4 className="card-title">{name}</h4>
+      </Link>
       <hr />
       <p className="card-description">{description}</p>
       <br />
