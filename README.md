@@ -1,8 +1,91 @@
-# Getting Started with Create React App
+<a name="readme-top"></a>
+
+<div align="center">
+  <h1><b> 🏖 Resort Booking 🏞 </b></h1>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+
+# 📗 Table of Contents
+
+- [📗 Table of Contents](#-table-of-contents)
+- [💸 Resort Booking ](#-resort-booking-)
+- [🛠 Built With ](#-built-with-)
+  - [📌 Tech Stack ](#-tech-stack-)
+- [🎲 Key Features ](#-key-features-)
+- [🚀 Live Demo](#-live-demo-)
+- [💻 Getting Started ](#-getting-started-)
+  - [Prerequisites](#prerequisites)
+  - [Setup](#setup)
+  - [Usage](#usage)
+  - [Run tests](#run-tests)
+- [👥 Authors ](#-authors-)
+- [🔭 Future Features ](#-future-features-)
+- [🤝 Contributing ](#-contributing-)
+- [⭐️ Show your support ](#️-show-your-support-)
+- [🙏 Acknowledgments ](#-acknowledgments-)
+- [📝 License ](#-license-)
+
+<!-- PROJECT DESCRIPTION -->
+
+# Resort Booking <a name="about-project"></a>
+
+**Resort Booking** is a web application that offers a diverse selection of luxurious accommodations and amenities. Find your slice of paradise, effortlessly plan your trip, and make memories that last a lifetime with ResortHub.
+
+
+# 🛠 Built With <a name="built-with"></a>
+
+## 📌 Tech Stack <a name="tech-stack"></a>
+
+| Domain | Tech Stack |
+|--------|--------|
+| Server | <a href="https://github.com/facebook/create-react-app">React</a> |
+| Library | <a href="https://redux.js.org/">Redux</a> |
+| Compiler | <a href="https://babeljs.io/docs/">Babel</a> |
+
+<!-- Features -->
+
+# 🎲 Key Features <a name="key-features"></a>
+
+- Create a new account
+- Log in to an existing account
+- Sign out from a session
+- Choose from a variety of beatiful resorts
+- Book a resort
+- Add a resort
+- Delete a resort
+
+# 🚀 Live Demo <a name="live-demo"></a>
+
+👉 [Not Available](https://....)
+
+# 💻 Rails API <a name="rails-api"></a>
+
+```sh
+  https://github.com/Leeoasis/resort-booking-backend-app
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<!-- GETTING STARTED -->
+
+# 💻 Getting Started with Create React App <a name="getting-started"></a>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
+
+Clone this repository to your desired folder:
+
+```sh
+  cd my-folder
+  git clone https://github.com/Leeoasis/resort-booking-frontend-app.git
+```
+
+To install dependencies, run:
+
+```sh
+npm install
+```
 
 In the project directory, you can run:
 
@@ -39,32 +122,73 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<!-- AUTHORS -->
 
-### Code Splitting
+# 👥 Authors <a name="authors"></a>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+🤑 **Leslie Gudo**
 
-### Analyzing the Bundle Size
+- GitHub: [@Leeoasis](https://github.com/Leeoasis)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+🤑 **Lawrence Amoafo**
 
-### Making a Progressive Web App
+- GitHub: [@Kwaku28](https://github.com/Kwaku28)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+🤑 **KUBAHO LINNE Heaven**
 
-### Advanced Configuration
+- GitHub: [@KUBAHO3](https://github.com/KUBAHO3)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+🤑 **Abbas Sarwar**
 
-### Deployment
+- GitHub: [@AbbasSarwar](https://github.com/AbbasSarwar)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+<!-- FUTURE FEATURES -->
 
-### `npm run build` fails to minify
+# 🔭 Future Features <a name="future-features"></a>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  - Full Website
+  - Cancel a booking
+
+<!-- CONTRIBUTING -->
+
+# 🤝 Contributing <a name="contributing"></a>
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](https://github.com/Leeoasis/resort-booking-frontend-app/issues).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- SUPPORT -->
+
+# ⭐️ Show your support <a name="support"></a>
+
+Your support is crucial to the success of this project! There are ways you can contribute and show your support:
+
+- Provide Feedback: If you've tried out the project or have any suggestions for improvement, I would love to hear from you. Your feedback is invaluable in shaping the future direction of the project.
+
+- Kindly Give a 🌟 STAR 🌟 if you like this project!
+
+Remember, your support matters! Whether it's spreading the word, providing feedback, reporting issues, contributing code, or making a donation, every action makes a difference. Together, we can make this project even better.
+
+Thank you for your support and for being a part of this journey! ❤️
+
+<!-- ACKNOWLEDGEMENTS -->
+
+# 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+We would like to thank: 
+- Microverse
+- [Murat Kortmaz](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign) for the original design idea
+- Code Reviewers
+
+<!-- LICENSE -->
+
+# 📝 License <a name="license"></a>
+
+This project is [MIT](./LICENSE) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
