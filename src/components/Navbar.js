@@ -15,7 +15,7 @@ const Navbar = () => {
     <>
       <header className="bg-dark text-light"><i className="fa-solid fa-bars" role="button" tabIndex={0} onClick={openMenu} onKeyDown={openMenu} aria-label="toggle nav" /></header>
       <nav className={`col-4 col-md-2 flex-column ${sidebar ? 'open' : ''}`}>
-        <p><i className="fa-solid fa-x text-light" role="button" tabIndex={0} onClick={openMenu} onKeyDown={openMenu} aria-label="toggle nav" /></p>
+        <p className="d-flex justify-content-end p-2"><i className="fa-solid fa-x text-light" role="button" tabIndex={0} onClick={openMenu} onKeyDown={openMenu} aria-label="toggle nav" /></p>
         <img className="nav-logo" src={logo} width={140} height={40} alt="Navbar logo" />
         <ul className=" d-flex flex-column fs-6 pt-4">
           {loggedIn && (
