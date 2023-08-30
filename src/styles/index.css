@@ -1,0 +1,199 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+}
+
+#root {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+header {
+  display: none;
+  z-index: 1;
+}
+
+nav {
+  z-index: 3;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  border-right: 1px solid rgb(225, 190, 190);
+  position: fixed;
+}
+
+nav h1 {
+  font-family: sans-serif;
+}
+
+.nav-logo {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+nav ul,
+a {
+  list-style: none;
+  text-decoration: none;
+  width: 100%;
+  text-align: center;
+  height: 100%;
+  line-height: 35px;
+  transition: 0.5s;
+  color: #000;
+  font-weight: 500;
+  border-radius: 2px;
+  padding: 0;
+}
+
+nav ul li {
+  width: 100%;
+  padding: 5px 0;
+  display: flex;
+}
+
+nav ul a:hover {
+  background-color: rgba(92, 211, 195, 0.952);
+  color: #fff;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+.active > p {
+  background-color: rgba(92, 211, 195, 0.642);
+  color: #fff;
+}
+
+.title {
+  text-align: center;
+  font-weight: 800;
+  font-size: 30px;
+}
+
+.title-info {
+  text-align: center;
+  color: rgb(67, 67, 67);
+  font-weight: 500;
+}
+
+.card-container {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+.card-img {
+  border-radius: 1rem;
+}
+
+.react-multi-carousel-list {
+  text-align: center;
+}
+
+.react-multiple-carousel__arrow--left[type="button"] {
+  left: 0;
+  border-radius: 0% 50% 50% 0%;
+  background-color: aquamarine;
+}
+
+.react-multiple-carousel__arrow--right[type="button"] {
+  right: 0;
+  border-radius: 50% 0% 0% 50%;
+  background-color: aquamarine;
+}
+
+.card-title {
+  font-weight: 500;
+  margin-top: 20px;
+}
+
+.card-description {
+  color: gray;
+  font-weight: 400;
+}
+
+.social-icon {
+  border: #000 1px solid;
+  border-radius: 50%;
+  padding: 4px;
+  margin: 5px;
+}
+
+.main {
+  width: 83.1%;
+  float: right;
+  margin-right: 0%;
+  right: 0;
+  position: absolute;
+}
+
+@media only screen and (max-width: 767px) {
+  header {
+    display: flex;
+    height: 40px;
+    padding: 10px 5px;
+    font-size: 19px;
+    align-items: center;
+  }
+
+  nav {
+    display: flex;
+    height: 100vh;
+    position: fixed;
+    z-index: 1;
+    background-color: rgb(29, 26, 26);
+    color: #fff;
+    left: -100%;
+    transition: 850ms;
+  }
+
+  nav ul {
+    width: 100%;
+    padding: 0;
+  }
+
+  nav ul li a {
+    color: #fff;
+    width: 100%;
+  }
+
+  #root {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .open {
+    position: fixed;
+    left: 0;
+    transition: 350ms;
+  }
+
+  .sessions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .login {
+    padding: 50px 0;
+  }
+
+  .react-multi-carousel-list {
+    width: 100%;
+  }
+
+  .main {
+    width: 100%;
+  }
+}
