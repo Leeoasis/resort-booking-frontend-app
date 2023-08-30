@@ -4,7 +4,7 @@ import axios from 'axios';
 export const fetchsession = createAsyncThunk(
   'sign_in/fetchsession',
   async (login) => {
-    const url = 'http://127.0.0.1:3000/login';
+    const url = 'https://resort-app.onrender.com/login';
     const response = await axios.post(url, login);
     if (response.status === 200) {
       localStorage.setItem('token', response.headers.get('Authorization'));

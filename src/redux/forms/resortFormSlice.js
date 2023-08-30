@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-const url = 'http://localhost:3000/api/v1/resorts';
+const url = 'https://resort-app.onrender.com/api/v1/resorts';
 
 export const postResorts = createAsyncThunk('fromSlice/postResorts', async (resort) => {
   const authToken = localStorage.getItem('token');

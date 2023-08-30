@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk, isRejectedWithValue } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const url = 'http://localhost:3000/api/v1/resorts';
+const url = 'https://resort-app.onrender.com/api/v1/resorts';
 
 const initialState = {
   resorts: [],

@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
-const baseUrl = 'http://127.0.0.1:3000/api/v1/bookings/';
+const baseUrl = 'https://resort-app.onrender.com/api/v1/bookings/';
 
 export const postReservation = createAsyncThunk(
   'reservation/postReservation',

@@ -4,7 +4,7 @@ import axios from 'axios';
 export const fetchreg = createAsyncThunk(
   'sign_in/fetchregistration',
   async (user) => {
-    const url = 'http://127.0.0.1:3000/signup';
+    const url = 'https://resort-app.onrender.com/signup';
     const response = await axios.post(url, user);
     localStorage.setItem('token', response.headers.get('Authorization'));
     localStorage.setItem('data', JSON.stringify(response.data));
