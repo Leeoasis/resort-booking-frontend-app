@@ -10,6 +10,10 @@ const logoutApi = createAsyncThunk('user/logout', async () => {
       authorization: localStorage.getItem('token'),
     },
   });
+  if(response.status === 200){
+    localStorage.removeItem("token");
+    localStorage.removeItem("data");
+  }
   return response.data;
 });
 export default logoutApi;
