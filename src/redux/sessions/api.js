@@ -7,7 +7,7 @@ const logoutApi = createAsyncThunk('user/logout', async () => {
     method: 'delete',
     headers: {
       'content-type': 'application/json',
-      'authorization': localStorage.getItem('token'),
+      Authorization: localStorage.getItem('token'),
     },
   });
   return response.data;
